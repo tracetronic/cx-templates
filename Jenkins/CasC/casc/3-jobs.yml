@@ -1,0 +1,23 @@
+jobs:
+  - script: >
+      pipelineJob('docker-maven') {
+        definition {
+          cps {
+            script("""\
+              pipeline {
+                agent { docker { image 'maven:3' } }
+                stages {
+                  stage('version') {
+                      steps {
+                          sh 'mvn --version'
+                          withCredentials([string(credentialsId: 'master-password', variable: 'MASTER_PASSWORD')]) {
+                            sh 'mvn -B --encrypt-master-password \$MASTER_PASSWORD'
+                          }
+                      }
+                  }
+                }
+              }""".stripIndent())
+            sandbox()
+          }
+        }
+      }

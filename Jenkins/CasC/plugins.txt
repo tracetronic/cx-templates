@@ -1,0 +1,7 @@
+command-launcher:1.5
+configuration-as-code:1.47
+docker-plugin:1.2.2
+docker-workflow:1.26
+git:4.6.0
+job-dsl:1.77
+workflow-aggregator:2.6

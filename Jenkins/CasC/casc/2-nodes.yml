@@ -1,0 +1,17 @@
+jenkins:
+  clouds:
+    - docker:
+        name: "docker"
+        dockerApi:
+          dockerHost:
+            uri: "unix://var/run/docker.sock"
+        exposeDockerHost: true
+        templates:
+          - name: "docker-agent"
+            labelString: "docker"
+            dockerTemplateBase:
+              environmentsString: "JENKINS_WEB_SOCKET=true"
+              image: "jenkins/inbound-agent"
+            pullStrategy: PULL_LATEST
+            remoteFs: "/home/jenkins"
+            connector: attach

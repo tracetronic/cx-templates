@@ -1,0 +1,21 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.linkedEditing": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        120
+    ],
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 120
+    },
+    "[yaml]": {
+        "editor.tabSize": 2
+    }
+}

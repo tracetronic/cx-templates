@@ -1,0 +1,4 @@
+tool:
+  git:
+    installations:
+      - name: "jgit"

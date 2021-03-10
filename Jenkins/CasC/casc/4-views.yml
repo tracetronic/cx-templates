@@ -1,0 +1,4 @@
+jenkins:
+  primaryView:
+    all:
+      name: "all"

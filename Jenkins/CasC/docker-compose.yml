@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  jenkins:
+    container_name: jenkins
+    hostname: jenkins
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./casc:/var/jenkins_home/casc
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc
+    user: 0:1000
