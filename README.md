@@ -49,7 +49,7 @@ Currently, we do not accept any external pull requests.
 
 ## Support
 
-If you have any further questions, please contact us at [support@tracetronic.de](mailto:support@tracetronic.de).
+If you have any further questions, please contact us at [support@tracetronic.com](mailto:support@tracetronic.com).
 
 ## License
 
