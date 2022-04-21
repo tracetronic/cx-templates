@@ -24,4 +24,4 @@ ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
 # Pre-install plugins
 COPY plugins.txt ${REF}/plugins.txt
-RUN install-plugins.sh < "${REF}/plugins.txt"
+RUN jenkins-plugin-cli -f "${REF}/plugins.txt"

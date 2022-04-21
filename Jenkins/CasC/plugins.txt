@@ -1,5 +1,5 @@
 command-launcher:1.5
-configuration-as-code:1.47
+configuration-as-code:1429.v09b_044a_c93de
 docker-plugin:1.2.2
 docker-workflow:1.26
 git:4.6.0
