@@ -1,3 +1,5 @@
+# Usage of lts without version numbering is discouraged. Consider using the latest lts version
+# with version number, such as jenkins/jenkins:2.332.2-lts
 FROM jenkins/jenkins:lts
 
 USER root
@@ -24,4 +26,4 @@ ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
 # Pre-install plugins
 COPY plugins.txt ${REF}/plugins.txt
-RUN install-plugins.sh < "${REF}/plugins.txt"
+RUN jenkins-plugin-cli -f "${REF}/plugins.txt"
