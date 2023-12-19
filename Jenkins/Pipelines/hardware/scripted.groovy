@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 TraceTronic GmbH
+ * Copyright (c) 2021 - 2023 tracetronic GmbH
  *
  * SPDX-License-Identifier: MIT
  */
@@ -10,7 +10,7 @@
  */
 @Library('shared-lib@master') _
 /**
- * Load the TraceTronic Jenkins Library to use all provided helper methods. This library can be defined in Jenkins global settings as well.
+ * Load the tracetronic Jenkins Library to use all provided helper methods. This library can be defined in Jenkins global settings as well.
  * For more information see https://www.jenkins.io/doc/book/pipeline/shared-libraries/
  */
 @Library('github.com/tracetronic/jenkins-library@main')
@@ -84,7 +84,7 @@ try {
                     log.info('Prepare the test bench to run all tests.')
 
                     /**
-                    * Start tools utilizing ECU-TEST Jenkins plugin
+                    * Start tools utilizing ecu.test Jenkins plugin
                     * For more information see https://plugins.jenkins.io/ecutest/
                     */
                     startET toolName: ecuTestVersion, workspaceDir: hilConfig.etWsPath
@@ -109,14 +109,14 @@ try {
                     }
                 }
                 stage('Test Execution') {
-                    log.info('Run all tests via ECU-TEST plugin.')
+                    log.info('Run all tests via ecu.test plugin.')
                     testFolder testFile: 'tests', recursiveScan: true,
                         testConfig: [tbcFile: hilConfig.tbc, tcfFile: hilConfig.tcf]
                 }
                 stage('Publish Reports') {
                     log.info('Generate and publish test reports.')
                     publishGenerators generators: [[name: 'JSON']], toolName: ecuTestVersion
-                    publishATX atxName: 'TEST-GUIDE'
+                    publishATX atxName: 'test.guide'
                 }
                 stage('Shut Down') {
                     log.info('Shut down the loaded environment.')
@@ -128,9 +128,9 @@ try {
                         shutDownEnv(hilConfig))
                     }
                 }
-                stage('Pipeline 2 TEST-GUIDE Json') {
+                stage('Pipeline 2 test.guide Json') {
                     /**
-                    * generate a  TEST-GUIDE json report schema conform zip of the pipeline build
+                    * generate a  test.guide json report schema conform zip of the pipeline build
                     * For more information see https://github.com/tracetronic/jenkins-library
                     */
                     pipeline2AtXGenerator(true)
@@ -149,7 +149,7 @@ try {
                  Stacktrace: ${exc}"""
 } finally {
     /**
-     * Generates a TEST-GUIDE compatible JSON report of a pipeline build including logs and stage meta data.
+     * Generates a test.guide compatible JSON report of a pipeline build including logs and stage meta data.
      * For more information see https://github.com/tracetronic/jenkins-library
      */
     pipeline2ATX(params.debug)
