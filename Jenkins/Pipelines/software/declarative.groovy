@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 TraceTronic GmbH
+ * Copyright (c) 2021 - 2023 tracetronic GmbH
  *
  * SPDX-License-Identifier: MIT
  */
@@ -10,7 +10,7 @@
  */
 @Library('shared-lib@master')
 /**
- * Load the TraceTronic Jenkins Library to use all provided helper methods. This library can be defined in Jenkins global settings as well.
+ * Load the tracetronic Jenkins Library to use all provided helper methods. This library can be defined in Jenkins global settings as well.
  * For more information see https://www.jenkins.io/doc/book/pipeline/shared-libraries/
  */
 @Library('github.com/tracetronic/jenkins-library@main')
@@ -129,7 +129,7 @@ pipeline {
     post {
         always {
             /**
-             * Generates a TEST-GUIDE compatible JSON report of a pipeline build including logs and stage meta data.
+             * Generates a test.guide compatible JSON report of a pipeline build including logs and stage meta data.
              * For more information see https://github.com/tracetronic/jenkins-library
              */
             pipeline2ATX(true)

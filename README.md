@@ -2,9 +2,7 @@
 
 This repository contains a collection of templates for your CX automation workflows that may help you to find an easy way to get started with some specific tasks. CX stands for **"Continuous Everything"**.
 
-<img src=".github/logo.png" align="left" alt="Automotive DevOps Platform">
-
-**CX Templates** project is part of the [Automotive DevOps Platform](https://www.tracetronic.com/products/automotive-devops-platform/) by TraceTronic. With the **Automotive DevOps Platform**, we go from the big picture to the details and unite all phases of vehicle software testing – from planning the test scopes to summarizing the test results. At the same time, continuous monitoring across all test phases always provides an overview of all activities – even with several thousand test executions per day and in different test environments.
+**CX Templates** project is part of the [Automotive DevOps Platform](https://www.tracetronic.com/products/automotive-devops-platform/) by tracetronic. With the **Automotive DevOps Platform**, we go from the big picture to the details and unite all phases of vehicle software testing – from planning the test scopes to summarizing the test results. At the same time, continuous monitoring across all test phases always provides an overview of all activities – even with several thousand test executions per day and in different test environments.
 
 ## Table of Content
 
@@ -26,8 +24,8 @@ This repository contains a collection of templates for your CX automation workfl
 |      +- README.md                 # template documentation
 |   +- ...                          # semantic template structure
 |   +- README.md                    # tool based documentation
-+- ECU-TEST                         # tool based structure
-+- TEST-GUIDE                       # tool based structure
++- ecu.test                         # tool based structure
++- test.guide                       # tool based structure
 +- README.md                        # repository documentation
 ```
 
